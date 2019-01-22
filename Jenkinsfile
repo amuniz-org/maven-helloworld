@@ -18,9 +18,6 @@ pipeline {
       steps {
         sh "mvn versions:set -DnewVersion=$PREVIEW_VERSION"
         sh "mvn install"
-        sh "skaffold version"
-        sh "export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml"
-        sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:$PREVIEW_VERSION"
       }
     }
     stage('Build Release') {
@@ -35,9 +32,6 @@ pipeline {
         sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
         sh "jx step tag --version \$(cat VERSION)"
         sh "mvn clean deploy"
-        sh "skaffold version"
-        sh "export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml"
-        sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
       }
     }
   }
