@@ -7,7 +7,7 @@ $id$
     <groupId>com.cloudbees.manticore</groupId>
     <artifactId>example</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>example</name>
     <url>http://maven.apache.org</url>
     <dependencies>
