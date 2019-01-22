@@ -11,8 +11,5 @@ public class App
         System.out.println( "Hello World!" );
         // TODO: this is a task
         // FIXME: this is another task
-        try {
-            a = "Hello";
-        } catch (Exception e) {}
     }
 }
