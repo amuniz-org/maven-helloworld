@@ -28,7 +28,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        git 'https://github.com/cb-kubecd/maven-helloworld.git'
+        git 'https://github.com/amuniz-org/maven-helloworld.git'
 
         // so we can retrieve the version in later steps
         sh "echo \$(jx-release-version) > VERSION"
