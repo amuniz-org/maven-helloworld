@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/cb-kubecd/maven-helloworld:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/amuniz-org/maven-helloworld:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,7 +18,7 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/cb-kubecd/maven-helloworld:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/amuniz-org/maven-helloworld:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
@@ -26,5 +26,5 @@ profiles:
       - name: maven-helloworld
         chartPath: charts/maven-helloworld
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/cb-kubecd/maven-helloworld'
+          image.repository: '{{.DOCKER_REGISTRY}}/amuniz-org/maven-helloworld'
           image.tag: '{{.DIGEST_HEX}}'
