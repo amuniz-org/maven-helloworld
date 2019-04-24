@@ -1,0 +1,27 @@
+Step: build-step-credential-initializer-njkcz:
+
+{"level":"warn","ts":1556096362.3680375,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556096362.3687825,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-amuniz-org-environment-ridercal-88zmh:
+
+{"level":"warn","ts":1556096363.153384,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556096364.3271053,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/amuniz-org/environment-ridercalico-staging\" @ \"25a600bcd4a66d23fc94b20bc0ace2c62aa6c09a\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-04-24T08:59:26Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:772b6d49c520d2bbc5beebed9f82920ad95d3660,3:25a600bcd4a66d23fc94b20bc0ace2c62aa6c09a
+ran git fetch --unshallow origin 25a600bcd4a66d23fc94b20bc0ace2c62aa6c09a: 772b6d49c520d2bbc5beebed9f82920ad95d3660: in 
+ran git checkout master in 
+ran git reset --hard 772b6d49c520d2bbc5beebed9f82920ad95d3660 in 
+ran clean --force -d . in 
+ran git merge 25a600bcd4a66d23fc94b20bc0ace2c62aa6c09a in 
+Step: build-step-build-helm-build:
+
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
