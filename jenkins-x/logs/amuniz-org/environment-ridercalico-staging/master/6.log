@@ -1,0 +1,93 @@
+Step: build-step-credential-initializer-rpbqb:
+
+{"level":"warn","ts":1556096431.0800002,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556096431.080547,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-amuniz-org-environment-ridercal-tdthk:
+
+{"level":"warn","ts":1556096431.6964424,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556096432.8523533,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/amuniz-org/environment-ridercalico-staging\" @ \"v0.0.3\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-04-24T09:00:34Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:d5186b65259b26c6d84d006969991bd7e69118c9
+time="2019-04-24T09:00:34Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-setup-**-git-credentials:
+
+Generated Git credentials file /builder/home/git/credentials
+Step: build-step-build-helm-apply:
+
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 6
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+Applying helm chart at . as release name ** to namespace **-staging
+Ignoring templates/.gitignore
+Wrote chart values.yaml values.yaml generated from directory tree
+generated helm values.yaml
+
+PipelineSecrets: {}
+cleanup:
+  Annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: hook-succeeded
+  Args:
+  - --cleanup
+controllerbuild:
+  enabled: true
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  Args:
+  - --v
+  - 4
+  config:
+    domain: dev.amunizmartin.com
+    exposer: Ingress
+    http: "true"
+jenkins:
+  Servers:
+    Global:
+      EnvVars:
+        TILLER_NAMESPACE: kube-system
+  enabled: false
+prow: {}
+
+
+Using values files: values.yaml
+Applying chart overrides
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Enumerating objects: 196, done.
+Counting objects:   0% (1/196)   Counting objects:   1% (2/196)   Counting objects:   2% (4/196)   Counting objects:   3% (6/196)   Counting objects:   4% (8/196)   Counting objects:   5% (10/196)   Counting objects:   6% (12/196)   Counting objects:   7% (14/196)   Counting objects:   8% (16/196)   Counting objects:   9% (18/196)   Counting objects:  10% (20/196)   Counting objects:  11% (22/196)   Counting objects:  12% (24/196)   Counting objects:  13% (26/196)   Counting objects:  14% (28/196)   Counting objects:  15% (30/196)   Counting objects:  16% (32/196)   Counting objects:  17% (34/196)   Counting objects:  18% (36/196)   Counting objects:  19% (38/196)   Counting objects:  20% (40/196)   Counting objects:  21% (42/196)   Counting objects:  22% (44/196)   Counting objects:  23% (46/196)   Counting objects:  24% (48/196)   Counting objects:  25% (49/196)   Counting objects:  26% (51/196)   Counting objects:  27% (53/196)   Counting objects:  28% (55/196)   Counting objects:  29% (57/196)   Counting objects:  30% (59/196)   Counting objects:  31% (61/196)   Counting objects:  32% (63/196)   Counting objects:  33% (65/196)   Counting objects:  34% (67/196)   Counting objects:  35% (69/196)   Counting objects:  36% (71/196)   Counting objects:  37% (73/196)   Counting objects:  38% (75/196)   Counting objects:  39% (77/196)   Counting objects:  40% (79/196)   Counting objects:  41% (81/196)   Counting objects:  42% (83/196)   Counting objects:  43% (85/196)   Counting objects:  44% (87/196)   Counting objects:  45% (89/196)   Counting objects:  46% (91/196)   Counting objects:  47% (93/196)   Counting objects:  48% (95/196)   Counting objects:  49% (97/196)   Counting objects:  50% (98/196)   Counting objects:  51% (100/196)   Counting objects:  52% (102/196)   Counting objects:  53% (104/196)   Counting objects:  54% (106/196)   Counting objects:  55% (108/196)   Counting objects:  56% (110/196)   Counting objects:  57% (112/196)   Counting objects:  58% (114/196)   Counting objects:  59% (116/196)   Counting objects:  60% (118/196)   Counting objects:  61% (120/196)   Counting objects:  62% (122/196)   Counting objects:  63% (124/196)   Counting objects:  64% (126/196)   Counting objects:  65% (128/196)   Counting objects:  66% (130/196)   Counting objects:  67% (132/196)   Counting objects:  68% (134/196)   Counting objects:  69% (136/196)   Counting objects:  70% (138/196)   Counting objects:  71% (140/196)   Counting objects:  72% (142/196)   Counting objects:  73% (144/196)   Counting objects:  74% (146/196)   Counting objects:  75% (147/196)   Counting objects:  76% (149/196)   Counting objects:  77% (151/196)   Counting objects:  78% (153/196)   Counting objects:  79% (155/196)   Counting objects:  80% (157/196)   Counting objects:  81% (159/196)   Counting objects:  82% (161/196)   Counting objects:  83% (163/196)   Counting objects:  84% (165/196)   Counting objects:  85% (167/196)   Counting objects:  86% (169/196)   Counting objects:  87% (171/196)   Counting objects:  88% (173/196)   Counting objects:  89% (175/196)   Counting objects:  90% (177/196)   Counting objects:  91% (179/196)   Counting objects:  92% (181/196)   Counting objects:  93% (183/196)   Counting objects:  94% (185/196)   Counting objects:  95% (187/196)   Counting objects:  96% (189/196)   Counting objects:  97% (191/196)   Counting objects:  98% (193/196)   Counting objects:  99% (195/196)   Counting objects: 100% (196/196)   Counting objects: 100% (196/196), done.
+Compressing objects:   1% (1/82)   Compressing objects:   2% (2/82)   Compressing objects:   3% (3/82)   Compressing objects:   4% (4/82)   Compressing objects:   6% (5/82)   Compressing objects:   7% (6/82)   Compressing objects:   8% (7/82)   Compressing objects:   9% (8/82)   Compressing objects:  10% (9/82)   Compressing objects:  12% (10/82)   Compressing objects:  13% (11/82)   Compressing objects:  14% (12/82)   Compressing objects:  15% (13/82)   Compressing objects:  17% (14/82)   Compressing objects:  18% (15/82)   Compressing objects:  19% (16/82)   Compressing objects:  20% (17/82)   Compressing objects:  21% (18/82)   Compressing objects:  23% (19/82)   Compressing objects:  24% (20/82)   Compressing objects:  25% (21/82)   Compressing objects:  26% (22/82)   Compressing objects:  28% (23/82)   Compressing objects:  29% (24/82)   Compressing objects:  30% (25/82)   Compressing objects:  31% (26/82)   Compressing objects:  32% (27/82)   Compressing objects:  34% (28/82)   Compressing objects:  35% (29/82)   Compressing objects:  36% (30/82)   Compressing objects:  37% (31/82)   Compressing objects:  39% (32/82)   Compressing objects:  40% (33/82)   Compressing objects:  41% (34/82)   Compressing objects:  42% (35/82)   Compressing objects:  43% (36/82)   Compressing objects:  45% (37/82)   Compressing objects:  46% (38/82)   Compressing objects:  47% (39/82)   Compressing objects:  48% (40/82)   Compressing objects:  50% (41/82)   Compressing objects:  51% (42/82)   Compressing objects:  52% (43/82)   Compressing objects:  53% (44/82)   Compressing objects:  54% (45/82)   Compressing objects:  56% (46/82)   Compressing objects:  57% (47/82)   Compressing objects:  58% (48/82)   Compressing objects:  59% (49/82)   Compressing objects:  60% (50/82)   Compressing objects:  62% (51/82)   Compressing objects:  63% (52/82)   Compressing objects:  64% (53/82)   Compressing objects:  65% (54/82)   Compressing objects:  67% (55/82)   Compressing objects:  68% (56/82)   Compressing objects:  69% (57/82)   Compressing objects:  70% (58/82)   Compressing objects:  71% (59/82)   Compressing objects:  73% (60/82)   Compressing objects:  74% (61/82)   Compressing objects:  75% (62/82)   Compressing objects:  76% (63/82)   Compressing objects:  78% (64/82)   Compressing objects:  79% (65/82)   Compressing objects:  80% (66/82)   Compressing objects:  81% (67/82)   Compressing objects:  82% (68/82)   Compressing objects:  84% (69/82)   Compressing objects:  85% (70/82)   Compressing objects:  86% (71/82)   Compressing objects:  87% (72/82)   Compressing objects:  89% (73/82)   Compressing objects:  90% (74/82)   Compressing objects:  91% (75/82)   Compressing objects:  92% (76/82)   Compressing objects:  93% (77/82)   Compressing objects:  95% (78/82)   Compressing objects:  96% (79/82)   Compressing objects:  97% (80/82)   Compressing objects:  98% (81/82)   Compressing objects: 100% (82/82)   Compressing objects: 100% (82/82), done.
+Total 1089 (delta 102), reused 181 (delta 98), pack-reused 893
+WARNING: could not find a stable version from charts of . from /builder/home/.**/jenkins-x-versions
+For background see: https://jenkins-x.io/architecture/version-stream/
+Please lock this version down via the command: ** step create version pr -k charts -n .
+
+Applying generated chart . YAML via kubectl in dir: /tmp/helm-template-workdir-618478008/**/output
+role.rbac.authorization.k8s.io/cleanup configured
+rolebinding.rbac.authorization.k8s.io/cleanup configured
+serviceaccount/cleanup configured
+configmap/exposecontroller configured
+role.rbac.authorization.k8s.io/expose configured
+rolebinding.rbac.authorization.k8s.io/expose configured
+serviceaccount/expose configured
+deployment.extensions/**-maven-helloworld configured
+release.jenkins.io/maven-helloworld-1.0.37 configured
+service/maven-helloworld configured
+
+Applying Helm hook post-upgrade YAML via kubectl in file: /tmp/helm-template-workdir-618478008/**/helmHooks/env/charts/expose/templates/job.yaml
+job.batch/expose created
+
+Waiting for helm post-upgrade hook Job expose to complete before removing it
+Deleting helm hook sources from file: /tmp/helm-template-workdir-618478008/**/helmHooks/env/charts/expose/templates/job.yaml
+job.batch "expose" deleted
+Removing Kubernetes resources from older releases using selector: jenkins.io/chart-release=**,jenkins.io/version!=6 from all pvc configmap release sa role rolebinding secret
+Removing Kubernetes resources from older releases using selector: jenkins.io/chart-release=**,jenkins.io/version!=6,jenkins.io/namespace=**-staging from clusterrole clusterrolebinding
