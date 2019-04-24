@@ -1,0 +1,46 @@
+buildPack: none
+pipelineConfig:
+  pipelines:
+    release:
+      pipeline:
+        agent:
+          image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
+        stages:
+        - name: release
+          environment:
+          - name: GIT_COMMITTER_EMAIL
+            value: amuniz-org-bot@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: amuniz-org-bot
+          - name: GIT_AUTHOR_EMAIL
+            value: amuniz-org-bot@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: amuniz-org-bot
+          steps:
+          - image: gcr.io/jenkinsxio/builder-maven:0.1.419
+            command: mvn
+            args:
+              - clean
+              - install
+
+    pullRequest:
+      pipeline:
+        agent:
+          image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
+        stages:
+        - name: release
+          environment:
+          - name: GIT_COMMITTER_EMAIL
+            value: amuniz-org-bot@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: amuniz-org-bot
+          - name: GIT_AUTHOR_EMAIL
+            value: amuniz-org-bot@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: amuniz-org-bot
+          steps:
+          - image: gcr.io/jenkinsxio/builder-maven:0.1.419
+            command: mvn
+            args:
+              - clean
+              - install
