@@ -1,0 +1,28 @@
+Step: build-step-credential-initializer-qz48v:
+
+{"level":"warn","ts":1556096307.3709366,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556096307.3715193,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-amuniz-org-environment-ridercal-jvdvc:
+
+{"level":"warn","ts":1556096309.6535273,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1556096310.7852743,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/amuniz-org/environment-ridercalico-staging\" @ \"1bb89388bbc01f7002bb0465e05924297641f92b\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-04-24T08:59:46Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:158edff22d0a91546d105ff07b87b6c53c1ce175,1:1bb89388bbc01f7002bb0465e05924297641f92b
+ran git fetch origin 1bb89388bbc01f7002bb0465e05924297641f92b: 158edff22d0a91546d105ff07b87b6c53c1ce175: in 
+Unshallowed git repo in 
+ran git checkout master in 
+ran git reset --hard 158edff22d0a91546d105ff07b87b6c53c1ce175 in 
+ran clean --force -d . in 
+ran git merge 1bb89388bbc01f7002bb0465e05924297641f92b in 
+Step: build-step-build-helm-build:
+
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
