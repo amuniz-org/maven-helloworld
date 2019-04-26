@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    ORG = 'cb-kubecd'
+    ORG = 'amuniz-org'
     APP_NAME = 'maven-helloworld'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
