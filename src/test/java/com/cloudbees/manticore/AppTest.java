@@ -29,6 +29,6 @@ public class AppTest extends TestCase {
      * Rigourous Test :-)
      */
     public void testApp() throws InterruptedException {
-        assertTrue(true);
+        assertTrue(false);
     }
 }
